@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sri Ranjni | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        fontFamily: {
+          sans: ['Inter','sans-serif'],
+          display: ['Poppins','sans-serif'],
+        },
+        extend: {
+          colors: {
+            primary: '#10b981',   // emerald‑500
+            secondary: '#f43f5e', // rose‑500
+            accent:    '#6366f1', // indigo‑500
+          },
+          keyframes: {
+            pulseGlow: {
+              '0%,100%': { opacity:'1', textShadow:'0 0 0 transparent' },
+              '50%':     { opacity:'.85', textShadow:'0 0 .66rem rgba(99,102,241,.7)' }
+            },
+            fadeIn: {
+              from:{ opacity:'0', transform:'translateY(12px)' },
+              to:  { opacity:'1', transform:'translateY(0)' }
+            }
+          },
+          animation: {
+            glow:  'pulseGlow 2.8s ease-in-out infinite',
+            fade:  'fadeIn .8s ease-out forwards'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* background gradients */
+    body              {background:linear-gradient(90deg,#f0fdf4,#ecfdf5);}
+    .dark body        {background:linear-gradient(90deg,#1e1b4b,#111827);}
+
+    /* navbar underline */
+    .nav-link         {position:relative;transition:color .3s;font-family:'Inter',sans-serif;}
+    .nav-link::after  {content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:#10b981;transition:width .35s;}
+    .dark .nav-link::after{background:#f43f5e;}
+    .nav-link:hover::after{width:100%;}
+  </style>
+</head>
+
+<body class="font-sans text-gray-900 transition duration-500 dark:text-white">
+
+  <!-- dark‑mode toggle -->
+  <div class="fixed bottom-6 left-6 z-50">
+    <label class="inline-flex items-center cursor-pointer">
+      <input type="checkbox" class="sr-only peer" onclick="document.documentElement.classList.toggle('dark')"/>
+      <div class="w-14 h-8 rounded-full bg-gray-300 peer dark:bg-gray-700 peer-checked:bg-primary dark:peer-checked:bg-secondary relative transition-all">
+        <div class="absolute left-1 top-1 w-6 h-6 bg-white rounded-full transition-all peer-checked:translate-x-6"></div>
+      </div>
+      <span class="ml-3 text-sm text-gray-700 dark:text-gray-300">Dark Mode</span>
+    </label>
+  </div>
+
+  <!-- navbar -->
+  <header class="fixed inset-x-0 top-0 z-40 backdrop-blur-md bg-white/20 dark:bg-black/30 shadow">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="font-display text-xl tracking-wide text-primary dark:text-secondary">Sri Ranjni</h1>
+      <ul class="flex gap-6 text-sm font-medium">
+        <li><a href="#home"     class="nav-link hover:text-primary dark:hover:text-secondary">Home</a></li>
+        <li><a href="#about"    class="nav-link hover:text-primary dark:hover:text-secondary">About</a></li>
+        <li><a href="#skills"   class="nav-link hover:text-primary dark:hover:text-secondary">Skills</a></li>
+        <li><a href="#projects" class="nav-link hover:text-primary dark:hover:text-secondary">Projects</a></li>
+        <li><a href="#contact"  class="nav-link hover:text-primary dark:hover:text-secondary">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- content -->
+  <main class="max-w-6xl mx-auto pt-28 px-4 space-y-24">
+
+    <!-- hero -->
+    <section id="home" class="text-center">
+      <h2 class="font-display text-4xl md:text-5xl text-primary dark:text-secondary animate-glow">
+        Hi, I’m Sri Ranjni
+      </h2>
+      <p class="text-lg mt-2 text-gray-600 dark:text-gray-300 font-medium">
+        Frontend Developer 
+      </p>
+    </section>
+
+    <!-- about -->
+    <section id="about" class="bg-white/20 dark:bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl animate-fade">
+      <h3 class="text-2xl font-display text-center text-primary dark:text-secondary mb-4">About Me</h3>
+      <p class="text-center text-gray-800 dark:text-gray-300">
+        Building websites that are both beautiful and functional. With expertise in front-end and back-end development, I deliver high-quality solutions that meet your needs. Check out my work to see the possibilities.
+      </p>
+    </section>
+
+    <!-- skills -->
+    <section id="skills" class="animate-fade" style="animation-delay:.15s">
+      <h3 class="text-2xl font-display text-center text-primary dark:text-secondary mb-6">My Skills</h3>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center text-sm">
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="h-10 mx-auto"/><p>Python</p></div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"   class="h-10 mx-auto"/><p>Java</p></div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg"    class="h-10 mx-auto"/><p>HTML</p></div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg"      class="h-10 mx-auto"/><p>CSS</p></div>
+        <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-10 mx-auto"/><p>JavaScript</p></div>
+      </div>
+    </section>
+
+    <!-- projects -->
+    <section id="projects">
+      <h3 class="text-2xl font-display text-center text-primary dark:text-secondary mb-6">My Projects</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl overflow-hidden shadow-lg bg-white/20 dark:bg-white/10 backdrop-blur-md transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-500">
+          <img src="https://www.hostinger.com/in/tutorials/wp-content/uploads/sites/52/2022/04/web-developer-portfolio.png" class="w-full h-40 object-cover"/>
+          <div class="p-4">
+            <h4 class="text-lg font-semibold text-accent">Personal Portfolio</h4>
+            <p class="text-sm text-gray-100">Responsive portfolio with animations & dark mode.</p>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg bg-white/20 dark:bg-white/10 backdrop-blur-md transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-500">
+          <img src="https://imageio.forbes.com/specials-images/dam/imageserve/1092571024/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" class="w-full h-40 object-cover"/>
+          <div class="p-4">
+            <h4 class="text-lg font-semibold text-accent">To‑Do App</h4>
+            <p class="text-sm text-gray-100">MERN STACK task‑manager with storage of tasks.</p>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden shadow-lg bg-white/20 dark:bg-white/10 backdrop-blur-md transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-500">
+          <img src="https://sghitech.in/images/BBWallpaper1.jpg" class="w-full h-40 object-cover"/>
+          <div class="p-4">
+            <h4 class="text-lg font-semibold text-accent">Blood Bank System</h4>
+            <p class="text-sm text-gray-100">Store the donor names and display them according to the blood groups.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="text-center animate-fade" style="animation-delay:.25s">
+      <h3 class="text-2xl font-display text-accent mb-4">Contact</h3>
+      <p class="text-sm text-gray-700 dark:text-gray-300">
+        📧 <a href="mailto:sri.ranjni@example.com" class="underline hover:text-primary dark:hover:text-secondary">sri.ranjni@example.com</a>
+      </p>
+      <p class="text-sm text-gray-700 dark:text-gray-300">
+        🌐 <a href="https://github.com/sri-ranjni" target="_blank" class="underline hover:text-primary dark:hover:text-secondary">github.com/sri-ranjni</a>
+      </p>
+    </section>
+
+    <!-- footer -->
+    <footer class="pt-10 pb-6 text-center text-xs text-gray-400 animate-fade" style="animation-delay:.35s">
+      &copy; 2025 <span class="font-display text-primary dark:text-secondary">Sri Ranjni</span>. All rights reserved.
+    </footer>
+
+  </main>
+</body>
+</html>
